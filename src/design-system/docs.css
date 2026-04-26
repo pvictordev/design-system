@@ -1,0 +1,50 @@
+.app-token-swatch {
+  height: 5rem;
+  border: var(--ds-border-width) solid var(--ds-border-subtle);
+  border-radius: var(--ds-radius-lg);
+}
+
+.app-token-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--ds-space-4);
+}
+
+.app-token-code {
+  color: var(--ds-text-secondary);
+  font-family: var(--ds-font-mono);
+  font-size: var(--ds-font-size-xs);
+}
+
+.app-space-bar {
+  display: block;
+  flex: 0 0 auto;
+  height: var(--ds-space-3);
+  border-radius: var(--ds-radius-full);
+  background: var(--ds-action-primary);
+}
+
+.app-radius-box {
+  display: grid;
+  min-height: 4.5rem;
+  place-items: center;
+  border: var(--ds-border-width) solid var(--ds-border-strong);
+  background: var(--ds-surface-muted);
+}
+
+.app-theme-frame {
+  min-width: 0;
+  padding: var(--ds-space-5);
+  border: var(--ds-border-width) solid var(--ds-border-subtle);
+  border-radius: var(--ds-radius-xl);
+  background: var(--ds-surface-page);
+}
+
+.app-story-card-width {
+  max-width: 28rem;
+}
+
+.app-story-form-width {
+  max-width: 34rem;
+}

@@ -1,0 +1,46 @@
+.ds-container {
+  width: min(100% - (var(--ds-page-gutter) * 2), var(--ds-container-max));
+  margin-inline: auto;
+}
+
+.ds-page {
+  min-height: 100vh;
+  padding-block: var(--ds-space-12);
+}
+
+.ds-section {
+  padding-block: var(--ds-section-gap);
+}
+
+.ds-form {
+  display: grid;
+  gap: var(--ds-space-4);
+}
+
+.ds-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--ds-space-3);
+}
+
+.ds-empty-state {
+  display: grid;
+  justify-items: center;
+  gap: var(--ds-space-4);
+  padding: var(--ds-space-12) var(--ds-space-6);
+  text-align: center;
+}
+
+.ds-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
