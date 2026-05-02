@@ -73,30 +73,6 @@ export const SettingsForm: Story = {
 
 export const Toolbar: Story = {
   render: () => ({
-    components: { Badge, Button, Card, Heading, Inline, Text },
-    template: `
-      <main class="ds-page">
-        <div class="ds-container">
-          <Card>
-            <div class="ds-toolbar">
-              <Inline gap="3">
-                <Heading :level="3">Deployments</Heading>
-                <Badge tone="success">Live</Badge>
-                <Text size="sm" tone="muted">Updated 4 min ago</Text>
-              </Inline>
-              <Inline gap="2">
-                <Button size="sm">Create deploy</Button>
-              </Inline>
-            </div>
-          </Card>
-        </div>
-      </main>
-    `,
-  }),
-};
-
-export const FloatingNavigation: Story = {
-  render: () => ({
     components: { Button, Folder, MessageSquareQuote, PanelsTopLeft, Quote, Tooltip },
     setup() {
       const activeTool = ref('messages');
@@ -104,13 +80,13 @@ export const FloatingNavigation: Story = {
       return { activeTool };
     },
     template: `
-      <main class="ds-page app-floating-nav-page">
-        <nav class="app-floating-nav-toolbar" aria-label="Workspace tools">
+      <main class="ds-page app-toolbar-page">
+        <nav class="app-toolbar-composition" aria-label="Workspace tools">
           <Tooltip content="Canvas">
             <template #trigger>
               <Button
-                class="app-floating-nav-action"
-                :class="{ 'app-floating-nav-action--active': activeTool === 'canvas' }"
+                class="app-toolbar-action"
+                :class="{ 'app-toolbar-action--active': activeTool === 'canvas' }"
                 variant="ghost"
                 size="sm"
                 aria-label="Canvas"
@@ -123,8 +99,8 @@ export const FloatingNavigation: Story = {
           <Tooltip content="Messages">
             <template #trigger>
               <Button
-                class="app-floating-nav-action"
-                :class="{ 'app-floating-nav-action--active': activeTool === 'messages' }"
+                class="app-toolbar-action"
+                :class="{ 'app-toolbar-action--active': activeTool === 'messages' }"
                 variant="ghost"
                 size="sm"
                 aria-label="Messages"
@@ -137,8 +113,8 @@ export const FloatingNavigation: Story = {
           <Tooltip content="Files">
             <template #trigger>
               <Button
-                class="app-floating-nav-action"
-                :class="{ 'app-floating-nav-action--active': activeTool === 'files' }"
+                class="app-toolbar-action"
+                :class="{ 'app-toolbar-action--active': activeTool === 'files' }"
                 variant="ghost"
                 size="sm"
                 aria-label="Files"
@@ -151,8 +127,8 @@ export const FloatingNavigation: Story = {
           <Tooltip content="Notes">
             <template #trigger>
               <Button
-                class="app-floating-nav-action"
-                :class="{ 'app-floating-nav-action--active': activeTool === 'notes' }"
+                class="app-toolbar-action"
+                :class="{ 'app-toolbar-action--active': activeTool === 'notes' }"
                 variant="ghost"
                 size="sm"
                 aria-label="Notes"
