@@ -8,6 +8,7 @@ export { default as Input } from '@/design-system/components/Input/Input.vue';
 export { default as Checkbox } from '@/design-system/components/Checkbox/Checkbox.vue';
 export { Dialog } from '@/design-system/components/Dialog';
 export { Select } from '@/design-system/components/Select';
+export { Tooltip } from '@/design-system/components/Tooltip';
 export { default as Badge } from '@/design-system/components/Badge/Badge.vue';
 export { default as Card } from '@/design-system/components/Card/Card.vue';
 export type { SelectOption } from '@/design-system/components/Select';

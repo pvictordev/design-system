@@ -48,3 +48,59 @@
 .app-story-form-width {
   max-width: 34rem;
 }
+
+.app-floating-nav-page {
+  min-height: 100vh;
+  padding: var(--ds-space-8);
+  display: grid;
+  place-items: center;
+  background: var(--ds-surface-page);
+}
+
+.app-floating-nav-toolbar {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-space-1);
+  width: fit-content;
+  padding: var(--ds-space-2);
+  border: var(--ds-border-width) solid var(--ds-border-subtle);
+  border-radius: var(--ds-radius-full);
+  background: color-mix(in srgb, var(--ds-surface-panel), transparent 3%);
+  box-shadow: var(--ds-shadow-md);
+}
+
+.app-floating-nav-action.ds-button {
+  min-width: 3.35rem;
+  min-height: 3.35rem;
+  padding: 0;
+  border-radius: var(--ds-radius-full);
+  color: var(--ds-text-secondary);
+}
+
+.app-floating-nav-action.ds-button:hover {
+  background: var(--ds-surface-muted);
+  color: var(--ds-text-primary);
+}
+
+.app-floating-nav-action--active.ds-button {
+  background: var(--ds-surface-inverse);
+  color: var(--ds-text-inverse);
+  box-shadow: var(--ds-shadow-sm);
+}
+
+.app-floating-nav-action--active.ds-button:hover {
+  background: var(--ds-surface-inverse);
+  color: var(--ds-text-inverse);
+}
+
+@media (max-width: 420px) {
+  .app-floating-nav-toolbar {
+    gap: 0;
+    padding: var(--ds-space-1);
+  }
+
+  .app-floating-nav-action.ds-button {
+    min-width: 3rem;
+    min-height: 3rem;
+  }
+}
