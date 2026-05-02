@@ -5,10 +5,7 @@ import {
   Button,
   Card,
   Checkbox,
-  Dialog,
-  Grid,
   Heading,
-  IconButton,
   Inline,
   Input,
   Select,
@@ -74,7 +71,7 @@ export const SettingsForm: Story = {
 
 export const Toolbar: Story = {
   render: () => ({
-    components: { Badge, Button, Card, Heading, IconButton, Inline, Text },
+    components: { Badge, Button, Card, Heading, Inline, Text },
     template: `
       <main class="ds-page">
         <div class="ds-container">
@@ -86,8 +83,6 @@ export const Toolbar: Story = {
                 <Text size="sm" tone="muted">Updated 4 min ago</Text>
               </Inline>
               <Inline gap="2">
-                <IconButton label="Filter"><span aria-hidden="true">F</span></IconButton>
-                <IconButton label="Refresh"><span aria-hidden="true">R</span></IconButton>
                 <Button size="sm">Create deploy</Button>
               </Inline>
             </div>
@@ -112,68 +107,6 @@ export const EmptyState: Story = {
               <Button>Create key</Button>
             </div>
           </Card>
-        </div>
-      </main>
-    `,
-  }),
-};
-
-export const SimpleDialogFlow: Story = {
-  render: () => ({
-    components: { Button, Dialog, Input, Stack, Text },
-    template: `
-      <main class="ds-page">
-        <div class="ds-container">
-          <Dialog title="Create API key" description="Name the key and keep the secret somewhere safe.">
-            <template #trigger>
-              <Button>Create API key</Button>
-            </template>
-
-            <Stack gap="4">
-              <Input label="Key name" placeholder="Production server" />
-              <Text size="sm">Dialog focus trapping, escape key behavior, and outside click behavior come from Reka.</Text>
-            </Stack>
-
-            <template #footer>
-              <Button variant="secondary">Cancel</Button>
-              <Button>Create key</Button>
-            </template>
-          </Dialog>
-        </div>
-      </main>
-    `,
-  }),
-};
-
-export const CardList: Story = {
-  render: () => ({
-    components: { Badge, Card, Grid, Heading, Text },
-    template: `
-      <main class="ds-page">
-        <div class="ds-container">
-          <Grid columns="auto" gap="4">
-            <Card interactive>
-              <template #header>
-                <Heading :level="3">Production</Heading>
-                <Badge tone="success">Online</Badge>
-              </template>
-              <Text>Requests, latency, and error budget for the production environment.</Text>
-            </Card>
-            <Card interactive>
-              <template #header>
-                <Heading :level="3">Staging</Heading>
-                <Badge tone="info">Syncing</Badge>
-              </template>
-              <Text>Preview deploys and integration checks before release.</Text>
-            </Card>
-            <Card interactive>
-              <template #header>
-                <Heading :level="3">Local</Heading>
-                <Badge>Idle</Badge>
-              </template>
-              <Text>Development keys and webhook tunnels for local testing.</Text>
-            </Card>
-          </Grid>
         </div>
       </main>
     `,

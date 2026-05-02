@@ -12,6 +12,7 @@ const meta = {
     title: 'Invite teammate',
     description: 'Dialog behavior is provided by Reka UI and styled by design-system tokens.',
     size: 'md',
+    modal: true,
   },
 } satisfies Meta<typeof Dialog>;
 
@@ -36,8 +37,8 @@ export const BasicFlow: Story = {
         </Stack>
 
         <template #footer>
-          <Button variant="secondary">Cancel</Button>
-          <Button>Send invite</Button>
+          <Button variant="secondary" size="sm">Cancel</Button>
+          <Button size="sm">Send invite</Button>
         </template>
       </Dialog>
     `,

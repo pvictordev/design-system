@@ -1,6 +1,6 @@
 import { ref } from 'vue';
 import type { Meta, StoryObj } from '@storybook/vue3-vite';
-import { Grid, Input, Stack } from '@/design-system';
+import { Input, Stack } from '@/design-system';
 
 const meta = {
   title: 'Design System/Components/Input',
@@ -37,23 +37,26 @@ export const Playground: Story = {
 
 export const States: Story = {
   render: () => ({
-    components: { Grid, Input, Stack },
+    components: { Input, Stack },
     setup() {
       const normal = ref('');
       const invalid = ref('bad-email');
       return { normal, invalid };
     },
     template: `
-      <Grid columns="auto" gap="4">
-        <Input v-model="normal" label="Default" placeholder="Enter a value" />
-        <Input label="Disabled" model-value="Unavailable" disabled />
-        <Input v-model="invalid" label="Invalid" error="Enter a valid email address." />
-        <Stack gap="3">
+      <Stack gap="6" style="width: min(100%, 64rem);">
+        <div style="display: grid; grid-template-columns: repeat(3, minmax(14rem, 1fr)); align-items: start; gap: var(--ds-space-4);">
+          <Input v-model="normal" label="Default" placeholder="Enter a value" />
+          <Input label="Disabled" model-value="Unavailable" disabled />
+          <Input v-model="invalid" label="Invalid" error="Enter a valid email address." />
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(3, minmax(10rem, 1fr)); align-items: start; gap: var(--ds-space-4); max-width: 42rem;">
           <Input size="sm" label="Small" placeholder="Small" />
           <Input size="md" label="Medium" placeholder="Medium" />
           <Input size="lg" label="Large" placeholder="Large" />
-        </Stack>
-      </Grid>
+        </div>
+      </Stack>
     `,
   }),
 };

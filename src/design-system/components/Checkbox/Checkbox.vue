@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed, useId } from 'vue';
+import { Check, Minus } from 'lucide-vue-next';
 import { CheckboxIndicator, CheckboxRoot } from 'reka-ui';
 
 const props = withDefaults(
@@ -32,8 +33,10 @@ const isInvalid = computed(() => Boolean(props.error));
 <template>
   <div class="ds-checkbox">
     <CheckboxRoot
+      v-slot="{ state }"
       :id="fieldId"
       v-model="model"
+      data-slot="checkbox"
       class="ds-checkbox__box"
       :disabled="disabled"
       :required="required"
@@ -41,8 +44,21 @@ const isInvalid = computed(() => Boolean(props.error));
       :aria-invalid="isInvalid || undefined"
       :aria-describedby="describedBy"
     >
-      <CheckboxIndicator class="ds-checkbox__indicator">
-        <span class="ds-checkbox__mark" aria-hidden="true" />
+      <CheckboxIndicator data-slot="checkbox-indicator" class="ds-checkbox__indicator">
+        <Minus
+          v-if="state === 'indeterminate'"
+          class="ds-checkbox__icon"
+          :size="12"
+          :stroke-width="2.5"
+          aria-hidden="true"
+        />
+        <Check
+          v-else
+          class="ds-checkbox__icon"
+          :size="12"
+          :stroke-width="2.5"
+          aria-hidden="true"
+        />
       </CheckboxIndicator>
     </CheckboxRoot>
 

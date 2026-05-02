@@ -10,7 +10,6 @@ import {
   DialogTitle,
   DialogTrigger,
 } from 'reka-ui';
-import IconButton from '@/design-system/components/IconButton/IconButton.vue';
 
 type Size = 'sm' | 'md' | 'lg';
 
@@ -34,31 +33,36 @@ const classes = computed(() => `ds-dialog--${props.size}`);
 </script>
 
 <template>
-  <DialogRoot v-model:open="open" :modal="modal">
-    <DialogTrigger v-if="$slots.trigger" as-child>
+  <DialogRoot v-model:open="open" data-slot="dialog" :modal="modal">
+    <DialogTrigger v-if="$slots.trigger" data-slot="dialog-trigger" as-child>
       <slot name="trigger" />
     </DialogTrigger>
 
     <DialogPortal>
-      <DialogOverlay class="ds-dialog__overlay" />
-      <DialogContent class="ds-dialog__content" :class="classes">
-        <div class="ds-dialog__header">
-          <DialogTitle class="ds-dialog__title">{{ title }}</DialogTitle>
-          <DialogDescription v-if="description" class="ds-dialog__description">
+      <DialogOverlay data-slot="dialog-overlay" class="ds-dialog__overlay" />
+      <DialogContent data-slot="dialog-content" class="ds-dialog__content" :class="classes">
+        <div data-slot="dialog-header" class="ds-dialog__header">
+          <DialogTitle data-slot="dialog-title" class="ds-dialog__title">
+            {{ title }}
+          </DialogTitle>
+          <DialogDescription
+            v-if="description"
+            data-slot="dialog-description"
+            class="ds-dialog__description"
+          >
             {{ description }}
           </DialogDescription>
         </div>
 
         <slot />
 
-        <div v-if="$slots.footer" class="ds-dialog__footer">
+        <div v-if="$slots.footer" data-slot="dialog-footer" class="ds-dialog__footer">
           <slot name="footer" />
         </div>
 
-        <DialogClose v-if="showClose" as-child>
-          <IconButton class="ds-dialog__close" label="Close dialog" variant="ghost" size="sm">
-            <span aria-hidden="true">x</span>
-          </IconButton>
+        <DialogClose v-if="showClose" data-slot="dialog-close" class="ds-dialog__close">
+          <span class="ds-dialog__close-icon" aria-hidden="true" />
+          <span class="ds-sr-only">Close</span>
         </DialogClose>
       </DialogContent>
     </DialogPortal>

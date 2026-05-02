@@ -51,7 +51,6 @@ src/
       Primitives.stories.ts
     components/
       Button.vue
-      IconButton.vue
       Input.vue
       Checkbox.vue
       Dialog/
@@ -123,7 +122,6 @@ import {
   Dialog,
   Grid,
   Heading,
-  IconButton,
   Inline,
   Input,
   Select,
@@ -223,10 +221,9 @@ Component styles should consume semantic tokens whenever possible. Raw hex value
 ### Core Components
 
 - `Button`: variants, sizes, disabled and loading states
-- `IconButton`: accessible icon-only button with required label
 - `Input`: labeled input with hint, error, disabled, and invalid states
 - `Checkbox`: Reka-backed checkbox with label, description, and validation
-- `Dialog`: Reka-backed modal dialog with trigger, header, body, footer, and close control
+- `Dialog`: Reka-backed modal with trigger, title, description, body, footer, and close control
 - `Select`: Reka-backed select with options, disabled items, validation, and sizing
 - `Badge`: neutral, success, warning, danger, and info tones
 - `Card`: framed content surface with header, action, body, footer, and interactive mode

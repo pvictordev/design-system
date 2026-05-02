@@ -9,7 +9,6 @@ import {
   Dialog,
   Grid,
   Heading,
-  IconButton,
   Inline,
   Input,
   Select,
@@ -27,11 +26,6 @@ const regions = [
   { label: 'United States', value: 'us' },
   { label: 'Asia Pacific', value: 'apac' },
 ];
-
-function toggleTheme() {
-  theme.value = theme.value === 'light' ? 'dark' : 'light';
-  document.documentElement.dataset.theme = theme.value;
-}
 
 document.documentElement.dataset.theme = theme.value;
 </script>
@@ -58,9 +52,6 @@ document.documentElement.dataset.theme = theme.value;
             <Inline gap="3">
               <Button>Primary action</Button>
               <Button variant="secondary">Secondary</Button>
-              <IconButton label="Toggle theme" variant="ghost" @click="toggleTheme">
-                <span aria-hidden="true">{{ theme === 'light' ? 'D' : 'L' }}</span>
-              </IconButton>
             </Inline>
           </Stack>
 

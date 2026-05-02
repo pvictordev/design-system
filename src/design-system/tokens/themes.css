@@ -36,7 +36,7 @@
   --ds-state-danger: var(--ds-color-red-600);
   --ds-state-danger-bg: var(--ds-color-red-50);
 
-  --ds-focus-ring: var(--ds-color-blue-600);
+  --ds-focus-ring: var(--ds-color-neutral-400);
   --ds-overlay: rgb(15 15 15 / 0.56);
 }
 
@@ -77,6 +77,6 @@
   --ds-state-danger: #f87171;
   --ds-state-danger-bg: rgb(220 38 38 / 0.18);
 
-  --ds-focus-ring: var(--ds-color-blue-500);
+  --ds-focus-ring: var(--ds-color-neutral-600);
   --ds-overlay: rgb(0 0 0 / 0.68);
 }

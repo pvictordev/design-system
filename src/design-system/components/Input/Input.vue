@@ -2,7 +2,7 @@
 import { computed, useId } from 'vue';
 
 type Size = 'sm' | 'md' | 'lg';
-type InputType = 'email' | 'number' | 'password' | 'search' | 'tel' | 'text' | 'url';
+type InputType = 'email' | 'file' | 'number' | 'password' | 'search' | 'tel' | 'text' | 'url';
 
 const props = withDefaults(
   defineProps<{
@@ -48,6 +48,7 @@ const classes = computed(() => `ds-input--${props.size}`);
     <input
       :id="fieldId"
       v-model="model"
+      data-slot="input"
       class="ds-input__control"
       :type="type"
       :name="name"

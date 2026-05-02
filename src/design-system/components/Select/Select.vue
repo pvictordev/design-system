@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed, useId } from 'vue';
+import { Check, ChevronDown } from 'lucide-vue-next';
 import {
   SelectContent,
   SelectIcon,
@@ -60,12 +61,20 @@ const classes = computed(() => `ds-select--${props.size}`);
         :aria-invalid="isInvalid || undefined"
         :aria-describedby="describedBy"
       >
-        <SelectValue :placeholder="placeholder" />
-        <SelectIcon class="ds-select__icon" />
+        <SelectValue data-slot="select-value" class="ds-select__value" :placeholder="placeholder" />
+        <SelectIcon as-child>
+          <ChevronDown class="ds-select__icon" aria-hidden="true" />
+        </SelectIcon>
       </SelectTrigger>
 
       <SelectPortal>
-        <SelectContent class="ds-select__content" position="popper" :side-offset="6">
+        <SelectContent
+          class="ds-select__content"
+          position="popper"
+          side="bottom"
+          align="start"
+          :side-offset="4"
+        >
           <SelectViewport class="ds-select__viewport">
             <SelectItem
               v-for="option in options"
@@ -75,10 +84,10 @@ const classes = computed(() => `ds-select--${props.size}`);
               :disabled="option.disabled"
               :text-value="option.label"
             >
-              <SelectItemText>{{ option.label }}</SelectItemText>
               <SelectItemIndicator class="ds-select__indicator">
-                <span class="ds-select__check" aria-hidden="true" />
+                <Check class="ds-select__check" aria-hidden="true" />
               </SelectItemIndicator>
+              <SelectItemText>{{ option.label }}</SelectItemText>
             </SelectItem>
           </SelectViewport>
         </SelectContent>
